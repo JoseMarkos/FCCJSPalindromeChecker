@@ -15,14 +15,15 @@ const split = (str: string): string[] => {
 }
 
 function palindrome(str: string): boolean {
+  let formated = format(str);
 
-  if (str.length === 3)
-    return str[0] === str[2];
+  if (formated.length === 3)
+    return formated[0] === formated[2];
 
-  if (str[0] !== str[str.length - 1])
+  if (formated[0] !== formated[formated.length - 1])
     return false
   
-  let filtered      = split(format(str));
+  let filtered      = split(formated);
   let reverseIndex  = filtered[0].length - 1;
 
   for (let index = 0; index < filtered[0].length; index++) {
@@ -37,5 +38,7 @@ function palindrome(str: string): boolean {
 }
 
 console.log(palindrome("eye"));
+console.log(palindrome("_eye"));
+console.log(palindrome("A man, a plan, a canal. Panama"));
 console.log(palindrome("holaaloh"));
 console.log(palindrome("pholaPalohp"));
