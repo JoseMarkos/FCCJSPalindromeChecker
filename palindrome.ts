@@ -31,9 +31,7 @@ const isPalindrome = (arr: string[]): boolean => {
   let reverseIndex  = arr[0].length - 1;
 
   for (let index = 0; index < arr[0].length; index++) {
-    if (arr[0][index] !== arr[1][reverseIndex]) {
-      return false;
-    }
+    if (arr[0][index] !== arr[1][reverseIndex]) return false;
     
     reverseIndex--;
   }
